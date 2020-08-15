@@ -56,7 +56,9 @@ for counter, item in enumerate(groceries, 1):
     print(f'{counter}: {item}')
 
 
-
+#------------------------------
+# ITERATING WITH RANGES
+#------------------------------
 
 
 
