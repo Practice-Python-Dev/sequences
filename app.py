@@ -23,8 +23,8 @@ groceries = ['roast beef', 'cucumbers', 'lettuce', 'peanut butter', 'bread', 'do
 for item in groceries:
     print(item)
 
-
-print("\n" + "-" *20) # <hr>
+# <hr>
+print("\n" + "-" *20)
 
 #------------------------------
 # THE ENUMERATE FUNCTION
@@ -41,8 +41,8 @@ for item in groceries:
     print(f'{index}: {item}')
     index += 1
 
-
-print("\n" + "-" *20) # <hr>
+# <hr>
+print("\n" + "-" *20)
 
 #----- ENUMERATE FUNCTION IS MORE EFFICIENT -----
 
@@ -56,8 +56,8 @@ print("\n" + "-" *20) # <hr>
 for counter, item in enumerate(groceries, 1):
     print(f'{counter}: {item}')
 
-
-print("\n" + "-" *20) # <hr>
+# <hr>
+print("\n" + "-" *20)
 
 #------------------------------
 # ITERATING WITH RANGES
@@ -71,8 +71,8 @@ for i in range(1, 10):
     else:
         print(i, end=", ")
     
-
-print("\n" + "-" *20) # <hr>
+# <hr>
+print("\n" + "-" *20)
 
 #------------------------------
 # SEQUENCES OPERATIONS
@@ -111,34 +111,66 @@ print(len(mixed))
 print(max(mixed))
 print(min(mixed))
 
-
-print("\n" + "-" *20) # <hr>
+# <hr>
+print("\n" + "-" *20)
 
 #----- MEMBERSHIP TESTING -----
 
+# A method is just a function 
 # Determine if an item or sequence is INSIDE another sequence
 
-python_docs = 'We saw that lists and strings have many common properties, such as indexing and slicing operations. They are two examples of sequence data types (see Sequence Types — list, tuple, range). Since Python is an evolving language, other sequence data types may be added. There is also another standard sequence data type: the tuple.'
+docs = 'We saw that lists and strings have many common properties, such as indexing and slicing operations. They are two examples of sequence data types (see Sequence Types — list, tuple, range). Since Python is an evolving language, other sequence data types may be added. There is also another standard sequence data type: the tuple.'
 
 # Check if 'tuple' is in the paragraph
-if 'tuple' in python_docs:
+if 'tuple' in docs:
     print('tuple is here!')
 else:
     print('tuple is not here...')
 
 # Check if 'tuple' is NOT in the paragraph
-if 'tuple' not in python_docs:
+if 'tuple' not in docs:
     print('tuple is not here...')
 else:
     print('tuple is here!')
-
-
-print("\n" + "-" *20) # TERMINAL SPACING ...
+print()
 
 #----- COUNT AND INDEX -----
 
-# How many time does the string tuple appear
-print(python_docs.count('tuple'))
+# We can also use methods to determine how many times a given object appears in a sequence
+    # A method is just a function that is called on a specific object!!!
+    # Sequences are objects, and they have special methods that can be called on them
 
-# What index does 'tuple' first appear
-print(python_docs.index('tuple'))
+# How many time does the string tuple occurs in docs (not exact matches only)
+print(docs.count('tuple'))
+
+# Find the index of the first occurence of an object inside a sequence
+print(docs.index('tuple'), '\n')
+
+# Find the index where 'Nicole' appears in the list
+teachers = ['Alena', 'Ashley', 'Nicole', 'Treasure', 'Ralph', 'Nicole']
+print(teachers.index('Nicole'))
+print(teachers.count('Nicole'))
+
+# <hr>
+print("\n" + "-" *20)
+
+#------------------------------
+# CONCATENATION AND MULTIPLICATION
+#------------------------------
+
+# Attach one object to the end of another (mutable sequences)
+# For immutable sequence types, concatenation always involves creating a new object
+# This is not memory efficient (consider a different data structure vs. immutable ...)
+
+object1 = [1, 2, 3, 4, 5,]
+object2 = [6, 7, 8, 9, 10]
+
+object1 = object1 + object2
+print(object1)
+
+#----- MULTIPLICATION -----
+
+# Concatenation multiple times - Also called "repitition"
+str = 'python'
+print((str + ", ") *5)
+
